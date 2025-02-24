@@ -2,7 +2,7 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative -z-10 overflow-hidden">
       {/* Gradients */}
       <div
         aria-hidden="true"
