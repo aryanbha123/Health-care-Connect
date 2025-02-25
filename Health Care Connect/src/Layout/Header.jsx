@@ -65,15 +65,29 @@ const Header = ({ connectOpen, setConnectOpen }) => {
                             <p>+91 9119071612</p>
                         </div>
                         <div className="flex gap-3 items-center">
-                            {[Instagram, LinkedIn, WhatsApp, Facebook].map((Icon, idx) => (
-                                <span
+                        {[
+                            {
+                                icon: <Instagram fontSize='inherit' />,
+                                href: "http://instagram.com/health.care.connect/?igsh=dWE4Zm14OG55eXE0#"
+                            }, {
+                                icon: <LinkedIn fontSize='inherit' />,
+                                href: "https://www.facebook.com/people/Kajal-Kiran/pfbid059tZtpXsYxyRystJpPLuhQ8a8s6dXkK8eG2RhYj3TsM5GJske471xo4PWMFZLbk2l/?rdid=shmmWt9df5fNfhHt&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Dwn8mXM7v%2F"
+                            }, {
+                                icon: <WhatsApp fontSize='inherit' />,
+                                href: "https://wa.me/+919119071612"
+                            }, {
+                                icon: <Facebook fontSize='inherit' />,
+                                href: "https://www.facebook.com/people/Kajal-Kiran/pfbid059tZtpXsYxyRystJpPLuhQ8a8s6dXkK8eG2RhYj3TsM5GJske471xo4PWMFZLbk2l/?rdid=shmmWt9df5fNfhHt&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Dwn8mXM7v%2F"
+                            }].map((I, idx) => (
+                                <Link
+                                    to={I.href}
                                     key={idx}
-                                    className="cursor-pointer text-sm p-1 h-6 w-6 flex justify-center items-center border border-black rounded-full"
+                                    className="cursor-pointer text-xs p-2 h-6 w-6 flex justify-center items-center border border-black rounded-full"
                                 >
-                                    <Icon fontSize="inherit" />
-                                </span>
+                                    {I.icon}
+                                </Link>
                             ))}
-                        </div>
+                    </div>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -109,16 +123,16 @@ const Header = ({ connectOpen, setConnectOpen }) => {
                     <div className="flex gap-3 items-center">
                         {[
                             {
-                                icon: <Instagram />,
+                                icon: <Instagram fontSize='inherit' />,
                                 href: "http://instagram.com/health.care.connect/?igsh=dWE4Zm14OG55eXE0#"
                             }, {
-                                icon: <LinkedIn />,
+                                icon: <LinkedIn fontSize='inherit' />,
                                 href: "https://www.facebook.com/people/Kajal-Kiran/pfbid059tZtpXsYxyRystJpPLuhQ8a8s6dXkK8eG2RhYj3TsM5GJske471xo4PWMFZLbk2l/?rdid=shmmWt9df5fNfhHt&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Dwn8mXM7v%2F"
                             }, {
-                                icon: <WhatsApp />,
-                                href: ""
+                                icon: <WhatsApp fontSize='inherit' />,
+                                href: "https://wa.me/+919119071612"
                             }, {
-                                icon: <Facebook />,
+                                icon: <Facebook fontSize='inherit' />,
                                 href: "https://www.facebook.com/people/Kajal-Kiran/pfbid059tZtpXsYxyRystJpPLuhQ8a8s6dXkK8eG2RhYj3TsM5GJske471xo4PWMFZLbk2l/?rdid=shmmWt9df5fNfhHt&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Dwn8mXM7v%2F"
                             }].map((I, idx) => (
                                 <Link

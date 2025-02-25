@@ -5,6 +5,8 @@ import Features from '../sections/Features';
 import AboutSection from '../sections/About';
 import Info from '../sections/Info';
 import Connect from '../sections/Connect';
+import Content from '../sections/Content';
+import Services from '../sections/Services';
 
 const Home = ({connectOpen, setConnectOpen}) => {
     const [isShow, setShow] = useState(true);
@@ -33,6 +35,8 @@ const Home = ({connectOpen, setConnectOpen}) => {
             <Info />
             <AboutSection />
             <HealthCareSection connectOpen={connectOpen} setConnectOpen={setConnectOpen} />
+            <Content/>
+            <Services/>
             <Features />
             <Connect connectOpen={connectOpen} setConnectOpen={setConnectOpen}/>
         </div>
