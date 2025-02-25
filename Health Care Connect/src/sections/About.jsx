@@ -10,13 +10,13 @@ const AboutSection = () => {
             <div className="pt-24 lg:justify-center sm:justify-end justify-start items-start gap-2.5 flex">
               <img
                 className="rounded-xl  object-cover"
-                src="/assets/WhatsApp Image 2025-02-20 at 15.11.50.jpeg"
+                src="/assets/B076A3E2-DDDF-4D8C-852E-3D4E9E093FD3_1_201_a.jpeg"
                 alt="About Us"
               />
             </div>
             <img
               className="sm:ml-0 ml-auto rounded-xl object-cover"
-              src="https://pagedone.io/asset/uploads/1717741215.png"
+              src="assets/B076A3E2-DDDF-4D8C-852E-3D4E9E093FD3_1_201_a.jpeg"
               alt="About Us"
             />
           </div>
@@ -53,7 +53,7 @@ const AboutSection = () => {
             </div>
 
             {/* Read More Button */}
-            <button className="sm:w-fit w-full px-3.5 py-2 bg-indigo-600 hover:bg-indigo-800 transition-all duration-700 ease-in-out rounded-lg shadow-md justify-center items-center flex">
+            <button className="sm:w-fit w-full px-3.5 py-2 bg-emerald-400 hover:bg-emerald-300 transition-all duration-700 ease-in-out rounded-lg shadow-md justify-center items-center flex">
               <span className="px-1.5 text-white text-sm font-medium leading-6">Read More</span>
             </button>
           </div>

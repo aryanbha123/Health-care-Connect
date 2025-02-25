@@ -4,7 +4,7 @@ const HealthCareSection = () => {
   return (
     <section className="py-16 relative z-30">
       <div className="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
-        <div className="w-full justify-start gap-8 grid lg:grid-cols-2 grid-cols-1">
+        <div className="w-full justify-between gap-8 flex lg:flex-row flex-col">
           <div className="w-full flex-col justify-start lg:items-start  gap-10 inline-flex">
             <div className="w-full flex-col justify-start lg:items-start items-start gap-4 flex">
               <h2 className="text-gray-900 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
@@ -24,8 +24,8 @@ const HealthCareSection = () => {
             </button>
           </div>
           <img
-            className="lg:mx-0 mx-auto h-full rounded-3xl object-cover"
-            src="https://pagedone.io/asset/uploads/1717751272.png"
+            className="lg:mx-0 mx-auto h-96  rounded-3xl object-cover"
+            src="/assets/WhatsApp Image 2025-02-17 at 16.07.03.jpeg"
             alt="Healthcare Connect"
           />
         </div>

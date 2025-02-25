@@ -16,11 +16,10 @@ export default function Hero() {
               <div className="w-full lg:w-6/12 px-3 ml-auto mr-auto text-center">
                 <div className="">
                   <h1 className="text-white font-semibold text-5xl">
-                    Welcome to Tons Valley Education Trust.
+                    Welcome to Health Care Connect
                   </h1>
                   <p className="mt-4 text-lg" style={{ color: "#f1f1f1" }}>
-                    Upliftment of the girl child &
-                    Empowering children through education and uplifting communities.
+                    Bridging the gap between healthcare providers & patients for better access, awareness, and care.
                   </p>
                 </div>
               </div>
@@ -38,12 +37,12 @@ export default function Hero() {
               <div className="pt-6 w-full md:w-4/12 px-4 text-center">
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
-                    <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
-                      <i className="fas fa-lightbulb"></i>
+                    <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-emerald-400">
+                      <i className="fas fa-stethoscope"></i>
                     </div>
                     <h6 className="text-xl font-semibold">Our Vision</h6>
                     <p className="mt-2 mb-4 text-blueGray-500">
-                    To uplift the girl child from the poverty and illiteracy and create a confident and cheerful responsible citizen with values of patriotism, honesty and sincerity 
+                      To create a world where quality healthcare is accessible to everyone, ensuring well-being and longevity.
                     </p>
                   </div>
                 </div>
@@ -51,15 +50,12 @@ export default function Hero() {
               <div className="w-full md:w-4/12 px-4 text-center">
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
-                    <div className="text-blue-400 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-lightBlue-400">
-                      <i className="fas fa-bullseye"></i>
+                    <div className="bg-emerald-400 text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-lightBlue-400">
+                      <i className="fas fa-heartbeat"></i>
                     </div>
                     <h6 className="text-xl font-semibold">Our Mission</h6>
                     <p className="mt-2 mb-4 text-blueGray-500">
-                    Empowering through education to give them an opportunity to improve their future without prejudice or discrimination
-                    {/* &
-                    nurturing them into a good human being */}
-
+                      To connect patients with trusted healthcare professionals, provide essential medical resources, and promote health awareness.
                     </p>
                   </div>
                 </div>
@@ -68,11 +64,11 @@ export default function Hero() {
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-emerald-400">
-                      <i className="fas fa-compass"></i>
+                      <i className="fas fa-hand-holding-medical"></i>
                     </div>
                     <h6 className="text-xl font-semibold">Our Approach</h6>
                     <p className="mt-2 mb-4 text-blueGray-500">
-                      We focus on holistic development by integrating educational programs by ensuring Freedom of Speech, Thought and Action and living with Dignity.
+                      We focus on leveraging technology and community engagement to provide better healthcare accessibility and support.
                     </p>
                   </div>
                 </div>
