@@ -1,71 +1,86 @@
-import React from "react";
+import React from 'react';
+// import backgroundImg from '../assets/IMG-20240824-WA0000.jpg';
 
-const HeroSection = () => {
+export default function Hero() {
   return (
-    <div className="relative -z-10 overflow-hidden">
-      {/* Gradients */}
-      <div
-        aria-hidden="true"
-        className="flex absolute -top-96 start-1/2 transform -translate-x-1/2"
-      >
-        <div className="bg-gradient-to-r from-v-300/50 to-purple-100 blur-3xl w-[25rem] h-[44rem] rotate-[-60deg] transform -translate-x-[10rem]"></div>
-        <div className="bg-gradient-to-tl from-blue-50 via-blue-100 to-blue-50 blur-3xl w-[90rem] h-[50rem] rounded-fulls origin-top-left -rotate-12 -translate-x-[15rem] "></div>
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10">
-        <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
-          <div className="max-w-2xl text-center mx-auto">
-            {/* <p className="inline-block text-sm font-medium bg-clip-text bg-gradient-to-l from-[#01adf0] to-[#01adf0] text-transparent">
-              Preline: A vision for 2023
-            </p> */}
-
-            {/* Title */}
-            <div className="mt-5 max-w-2xl">
-              <h1 className="block font-semibold text-gray-800 text-4xl md:text-5xl lg:text-6xl">
-                The Intuitive Web Solutions
-              </h1>
+    <div id=''>
+      <section className="relative bg-blueGray-50">
+        <div className="relative pt-16 pb-12 flex content-center items-center justify-center min-h-screen-75">
+          <div className="absolute top-0 w-full h-full bg-center bg-cover" style={{
+            backgroundImage: `url(${"backgroundImg"})`
+          }}>
+            <span id="blackOverlay" className="w-full h-full absolute opacity-70 bg-black"></span>
+          </div>
+          <div className="container relative mx-auto">
+            <div className="items-center flex flex-wrap">
+              <div className="w-full lg:w-6/12 px-3 ml-auto mr-auto text-center">
+                <div className="">
+                  <h1 className="text-white font-semibold text-5xl">
+                    Welcome to Tons Valley Education Trust.
+                  </h1>
+                  <p className="mt-4 text-lg" style={{ color: "#f1f1f1" }}>
+                    Upliftment of the girl child &
+                    Empowering children through education and uplifting communities.
+                  </p>
+                </div>
+              </div>
             </div>
-
-            {/* Description */}
-            <div className="mt-5 max-w-3xl">
-              <p className="text-lg text-gray-600 dark:text-neutral-400">
-                Preline UI is an open-source set of prebuilt UI components,
-                ready-to-use examples and Figma design system based on the
-                utility-first Tailwind CSS framework.
-              </p>
-            </div>
-
-            {/* Buttons */}
-            <div className="mt-8 gap-3 flex justify-center">
-              <a
-                className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-[#177709] text-white hover:ring-[1px] transition-all duration-200 hover:ring-gray-500 focus:outline-none disabled:opacity-50 disabled:pointer-events-none"
-                href="#"
-              >
-                Get started
-                <svg
-                  className="shrink-0 size-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="m9 18 6-6-6-6" />
-                </svg>
-              </a>
-         
-            </div>
-            {/* End Buttons */}
+          </div>
+          <div className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px" style={{ transform: "translateZ(0px)" }}>
+            <svg className="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+              <polygon className="text-blueGray-200 fill-current" points="2560 0 2560 100 0 100"></polygon>
+            </svg>
           </div>
         </div>
-      </div>
+        <section className="pb-10 bg-blueGray-200 -mt-10">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-wrap">
+              <div className="pt-6 w-full md:w-4/12 px-4 text-center">
+                <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+                  <div className="px-4 py-5 flex-auto">
+                    <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
+                      <i className="fas fa-lightbulb"></i>
+                    </div>
+                    <h6 className="text-xl font-semibold">Our Vision</h6>
+                    <p className="mt-2 mb-4 text-blueGray-500">
+                    To uplift the girl child from the poverty and illiteracy and create a confident and cheerful responsible citizen with values of patriotism, honesty and sincerity 
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="w-full md:w-4/12 px-4 text-center">
+                <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+                  <div className="px-4 py-5 flex-auto">
+                    <div className="text-blue-400 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-lightBlue-400">
+                      <i className="fas fa-bullseye"></i>
+                    </div>
+                    <h6 className="text-xl font-semibold">Our Mission</h6>
+                    <p className="mt-2 mb-4 text-blueGray-500">
+                    Empowering through education to give them an opportunity to improve their future without prejudice or discrimination
+                    {/* &
+                    nurturing them into a good human being */}
+
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="pt-6 w-full md:w-4/12 px-4 text-center">
+                <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+                  <div className="px-4 py-5 flex-auto">
+                    <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-emerald-400">
+                      <i className="fas fa-compass"></i>
+                    </div>
+                    <h6 className="text-xl font-semibold">Our Approach</h6>
+                    <p className="mt-2 mb-4 text-blueGray-500">
+                      We focus on holistic development by integrating educational programs by ensuring Freedom of Speech, Thought and Action and living with Dignity.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
     </div>
   );
-};
-
-export default HeroSection;
+}
