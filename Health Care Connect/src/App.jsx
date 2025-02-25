@@ -18,7 +18,7 @@ const App = () => {
     <Suspense fallback={<Loaader />}>
       <BrowserRouter>
           <Routes>
-            <Route path='/' element={<Layout connectOpen={connectOpen} setConnectOpen={setConnectOpen} wrappedComponent={<Home />} />} />
+            <Route path='/' element={<Layout connectOpen={connectOpen} setConnectOpen={setConnectOpen} wrappedComponent={<Home connectOpen={connectOpen} setConnectOpen={setConnectOpen}  />} />} />
           </Routes>
       </BrowserRouter>
     </Suspense>

@@ -2,13 +2,14 @@ import { Divider, IconButton } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import { Facebook, Instagram, LinkedIn, MenuOpen, WhatsApp } from '@mui/icons-material';
+import { href, Link } from 'react-router-dom';
 
-const Header = ({connectOpen, setConnectOpen}) => {
+const Header = ({ connectOpen, setConnectOpen }) => {
     const NAV_ITEMS = [
-        { label: 'Home', to: 'home',callBack:()=>{} },
-        { label: 'About', to: 'about',callBack:()=>{} },
-        { label: 'Services', to: 'services' ,callBack:()=>{} },
-        { label: 'Connect', to: 'connect' , callBack:()=>{setConnectOpen(true)} },
+        { label: 'Home', to: 'home', callBack: () => { } },
+        { label: 'About', to: 'about', callBack: () => { } },
+        { label: 'Services', to: 'services', callBack: () => { } },
+        { label: 'Connect', to: 'connect', callBack: () => { setConnectOpen(true) } },
     ];
 
     const [isScroll, setIsScroll] = useState(false);
@@ -16,7 +17,7 @@ const Header = ({connectOpen, setConnectOpen}) => {
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScroll(window.scrollY >20);
+            setIsScroll(window.scrollY > 20);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -26,14 +27,14 @@ const Header = ({connectOpen, setConnectOpen}) => {
     return (
         <>
             {/* Header */}
-            <header className={`${isScroll ?"md:-translate-y-100 translate-y-0" :""}  relative md:h-[135px] shadow-lg h-[70px] left-0 z-40 top-0 w-full bg-white`}>
-                {/* Top Bar */} 
+            <header className={`${isScroll ? "md:-translate-y-100 translate-y-0" : ""}  relative md:h-[135px] shadow-lg h-[70px] left-0 z-40 top-0 w-full bg-white`}>
+                {/* Top Bar */}
                 <nav className="h-[35px] fixed z-40 px-15 text-xs hidden md:flex items-center justify-between bg-[#d4f7e8] w-full">
                     <p>Welcome to our website</p>
                     <div className="flex items-center gap-5 py-2 text-xs">
                         {NAV_ITEMS.map((item, index) => (
-                            <button 
-                                    onClick={item.callBack} key={item.to}>
+                            <button
+                                onClick={item.callBack} key={item.to}>
                                 <ScrollLink
                                     className="cursor-pointer text-xs"
                                     to={item.to}
@@ -106,14 +107,28 @@ const Header = ({connectOpen, setConnectOpen}) => {
                         ))}
                     </div>
                     <div className="flex gap-3 items-center">
-                        {[Instagram, LinkedIn, WhatsApp, Facebook].map((Icon, idx) => (
-                            <span
-                                key={idx}
-                                className="cursor-pointer text-xs p-2 h-6 w-6 flex justify-center items-center border border-black rounded-full"
-                            >
-                                <Icon fontSize="inherit" />
-                            </span>
-                        ))}
+                        {[
+                            {
+                                icon: <Instagram />,
+                                href: "http://instagram.com/health.care.connect/?igsh=dWE4Zm14OG55eXE0#"
+                            }, {
+                                icon: <LinkedIn />,
+                                href: "https://www.facebook.com/people/Kajal-Kiran/pfbid059tZtpXsYxyRystJpPLuhQ8a8s6dXkK8eG2RhYj3TsM5GJske471xo4PWMFZLbk2l/?rdid=shmmWt9df5fNfhHt&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Dwn8mXM7v%2F"
+                            }, {
+                                icon: <WhatsApp />,
+                                href: ""
+                            }, {
+                                icon: <Facebook />,
+                                href: "https://www.facebook.com/people/Kajal-Kiran/pfbid059tZtpXsYxyRystJpPLuhQ8a8s6dXkK8eG2RhYj3TsM5GJske471xo4PWMFZLbk2l/?rdid=shmmWt9df5fNfhHt&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Dwn8mXM7v%2F"
+                            }].map((I, idx) => (
+                                <Link
+                                    to={I.href}
+                                    key={idx}
+                                    className="cursor-pointer text-xs p-2 h-6 w-6 flex justify-center items-center border border-black rounded-full"
+                                >
+                                    {I.icon}
+                                </Link>
+                            ))}
                     </div>
                 </section>
             </nav>

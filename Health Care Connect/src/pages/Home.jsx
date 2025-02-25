@@ -11,7 +11,7 @@ const Home = ({connectOpen, setConnectOpen}) => {
     useEffect(() => {
         setTimeout(() => {
             setShow(false)
-        }, 2000)
+        },0)
     }, []);
 
     return (
