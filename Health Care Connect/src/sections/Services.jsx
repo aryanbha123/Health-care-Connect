@@ -28,7 +28,7 @@ const Services = () => {
                     <h1 className='font-bold text-4xl text-center'>Our Services</h1>
                     <p className='text-sm  mt-3 text-center' >At Health Care Connect, we offer a range of services to meet diverse healthcare needs, providing professional and compassionate care for our clients.</p>
                 </div>
-                <div className='flex gap-5
+                <div className='flex md:flex-row flex-col gap-5
                  justify-center mt-8' >
                     {data.map((i, idx) => (
                         <>
