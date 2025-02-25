@@ -3,11 +3,11 @@ import Header from './Header';
 import Footer from './Footer';
 import LogoLoader from '../utilities/Loader';
 
-const Layout = ({ wrappedComponent }) => {
+const Layout = ({ wrappedComponent ,connectOpen, setConnectOpen }) => {
     return (
         <>
             {/* <LogoLoader> */}
-                <Header />
+                <Header connectOpen={connectOpen} setConnectOpen={setConnectOpen} />
                 {wrappedComponent}
                 <Footer />
             {/* </LogoLoader> */}

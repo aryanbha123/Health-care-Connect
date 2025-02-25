@@ -7,6 +7,7 @@ const Home = lazy(() => import('./pages/Home'));
 
 const App = () => {
   const [loading, setLoading] = useState(true);
+  const [connectOpen ,setConnectOpen] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000); // Simulated loading time
@@ -17,7 +18,7 @@ const App = () => {
     <Suspense fallback={<Loaader />}>
       <BrowserRouter>
           <Routes>
-            <Route path='/' element={<Layout wrappedComponent={<Home />} />} />
+            <Route path='/' element={<Layout connectOpen={connectOpen} setConnectOpen={setConnectOpen} wrappedComponent={<Home />} />} />
           </Routes>
       </BrowserRouter>
     </Suspense>

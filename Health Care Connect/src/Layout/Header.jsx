@@ -3,12 +3,12 @@ import React, { useEffect, useState } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import { Facebook, Instagram, LinkedIn, MenuOpen, WhatsApp } from '@mui/icons-material';
 
-const Header = () => {
+const Header = ({connectOpen, setConnectOpen}) => {
     const NAV_ITEMS = [
-        { label: 'Home', to: 'home' },
-        { label: 'About', to: 'about' },
-        { label: 'Services', to: 'services' },
-        { label: 'Connect', to: 'connect' },
+        { label: 'Home', to: 'home',callBack:()=>{} },
+        { label: 'About', to: 'about',callBack:()=>{} },
+        { label: 'Services', to: 'services' ,callBack:()=>{} },
+        { label: 'Connect', to: 'connect' , callBack:()=>{setConnectOpen(true)} },
     ];
 
     const [isScroll, setIsScroll] = useState(false);
@@ -32,17 +32,20 @@ const Header = () => {
                     <p>Welcome to our website</p>
                     <div className="flex items-center gap-5 py-2 text-xs">
                         {NAV_ITEMS.map((item, index) => (
-                            <React.Fragment key={item.to}>
+                            <button 
+                                    onClick={item.callBack} key={item.to}>
                                 <ScrollLink
                                     className="cursor-pointer text-xs"
                                     to={item.to}
+                                    offset={-100}
                                     smooth={true}
                                     duration={500}
                                 >
                                     {item.label}
+
                                 </ScrollLink>
                                 {index < NAV_ITEMS.length - 1 && <Divider flexItem orientation="vertical" />}
-                            </React.Fragment>
+                            </button>
                         ))}
                     </div>
                 </nav>
@@ -58,7 +61,7 @@ const Header = () => {
                     <div className="md:flex hidden gap-7 text-xs">
                         <div>
                             <p>Need Help? 24x7</p>
-                            <p>123421333</p>
+                            <p>+91 9119071612</p>
                         </div>
                         <div className="flex gap-3 items-center">
                             {[Instagram, LinkedIn, WhatsApp, Facebook].map((Icon, idx) => (

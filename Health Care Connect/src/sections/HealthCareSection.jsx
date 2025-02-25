@@ -1,6 +1,6 @@
 import React from "react";
 
-const HealthCareSection = () => {
+const HealthCareSection = ({connectOpen, setConnectOpen}) => {
   return (
     <section className="py-16 relative z-30">
       <div className="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
@@ -17,7 +17,7 @@ const HealthCareSection = () => {
                 We specialize in patient care, providing trained nurses and caretakers for day/night shifts or 24-hour care. Our goal is to ensure quality and compassionate healthcare services at your convenience.
               </p>
             </div>
-            <button className="sm:w-fit w-full px-3.5 py-2 bg-[#177709] hover:bg-[#01adf0] transition-all duration-700 ease-in-out rounded-lg shadow-md justify-center items-center flex">
+            <button onClick={()=>{setConnectOpen(true)}} className="sm:w-fit w-full px-3.5 py-2 bg-emerald-400 hover:bg-[#01adf0] transition-all duration-700 ease-in-out rounded-lg shadow-md justify-center items-center flex">
               <span className="px-1.5 text-white text-sm font-medium leading-6">
                 Contact Us
               </span>

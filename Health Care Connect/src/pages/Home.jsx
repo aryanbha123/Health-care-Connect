@@ -3,32 +3,38 @@ import HealthCareSection from '../sections/HealthCareSection';
 import HeroSection from '../sections/Hero';
 import Features from '../sections/Features';
 import AboutSection from '../sections/About';
+import Info from '../sections/Info';
+import Connect from '../sections/Connect';
 
-const Home = () => {
+const Home = ({connectOpen, setConnectOpen}) => {
     const [isShow, setShow] = useState(true);
-    useEffect(()=> {
-        setTimeout(()=>{
+    useEffect(() => {
+        setTimeout(() => {
             setShow(false)
-        },4000)
-    } ,[]);
+        }, 2000)
+    }, []);
+
     return (
         <div>
 
             {isShow &&
 
                 <div className="h-screen w-screen z-50 fixed left-0 top-0 flex justify-center items-center backdrop-blur-sm">
-                    <img
+                    <video
+                    autoPlay
+                    playsInline loop
                         className=" object-contain rounded-full  shadow-blue-500/50 "
-                        src="/assets/Untitled-design-unscreen.png"
+                        src="/assets/WhatsApp Video 2025-02-25 at 19.03.55.mp4"
                         alt="Loading Animation"
                     />
                 </div>
             }
-
             <HeroSection />
-            <AboutSection/>
-            <HealthCareSection />
+            <Info />
+            <AboutSection />
+            <HealthCareSection connectOpen={connectOpen} setConnectOpen={setConnectOpen} />
             <Features />
+            <Connect connectOpen={connectOpen} setConnectOpen={setConnectOpen}/>
         </div>
     );
 }

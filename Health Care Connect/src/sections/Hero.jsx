@@ -3,11 +3,11 @@ import React from 'react';
 
 export default function Hero() {
   return (
-    <div id=''>
+    <div id='home'>
       <section className="relative bg-blueGray-50">
         <div className="relative pt-16 pb-12 flex content-center items-center justify-center min-h-screen-75">
           <div className="absolute top-0 w-full h-full bg-center bg-cover" style={{
-            backgroundImage: `url(${"backgroundImg"})`
+            backgroundImage: `url(${"/assets/total-shape-yn8KzjHGtak-unsplash.jpg"})`
           }}>
             <span id="blackOverlay" className="w-full h-full absolute opacity-70 bg-black"></span>
           </div>
