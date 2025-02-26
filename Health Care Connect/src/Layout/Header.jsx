@@ -65,29 +65,29 @@ const Header = ({ connectOpen, setConnectOpen }) => {
                             <p>+91 9119071612</p>
                         </div>
                         <div className="flex gap-3 items-center">
-                        {[
-                            {
-                                icon: <Instagram fontSize='inherit' />,
-                                href: "http://instagram.com/health.care.connect/?igsh=dWE4Zm14OG55eXE0#"
-                            }, {
-                                icon: <LinkedIn fontSize='inherit' />,
-                                href: "https://www.facebook.com/people/Kajal-Kiran/pfbid059tZtpXsYxyRystJpPLuhQ8a8s6dXkK8eG2RhYj3TsM5GJske471xo4PWMFZLbk2l/?rdid=shmmWt9df5fNfhHt&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Dwn8mXM7v%2F"
-                            }, {
-                                icon: <WhatsApp fontSize='inherit' />,
-                                href: "https://wa.me/+919119071612"
-                            }, {
-                                icon: <Facebook fontSize='inherit' />,
-                                href: "https://www.facebook.com/people/Kajal-Kiran/pfbid059tZtpXsYxyRystJpPLuhQ8a8s6dXkK8eG2RhYj3TsM5GJske471xo4PWMFZLbk2l/?rdid=shmmWt9df5fNfhHt&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Dwn8mXM7v%2F"
-                            }].map((I, idx) => (
-                                <Link
-                                    to={I.href}
-                                    key={idx}
-                                    className="cursor-pointer text-xs p-2 h-6 w-6 flex justify-center items-center border border-black rounded-full"
-                                >
-                                    {I.icon}
-                                </Link>
-                            ))}
-                    </div>
+                            {[
+                                {
+                                    icon: <Instagram fontSize='inherit' />,
+                                    href: "http://instagram.com/health.care.connect/?igsh=dWE4Zm14OG55eXE0#"
+                                }, {
+                                    icon: <LinkedIn fontSize='inherit' />,
+                                    href: "https://www.facebook.com/people/Kajal-Kiran/pfbid059tZtpXsYxyRystJpPLuhQ8a8s6dXkK8eG2RhYj3TsM5GJske471xo4PWMFZLbk2l/?rdid=shmmWt9df5fNfhHt&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Dwn8mXM7v%2F"
+                                }, {
+                                    icon: <WhatsApp fontSize='inherit' />,
+                                    href: "https://wa.me/+919119071612"
+                                }, {
+                                    icon: <Facebook fontSize='inherit' />,
+                                    href: "https://www.facebook.com/people/Kajal-Kiran/pfbid059tZtpXsYxyRystJpPLuhQ8a8s6dXkK8eG2RhYj3TsM5GJske471xo4PWMFZLbk2l/?rdid=shmmWt9df5fNfhHt&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Dwn8mXM7v%2F"
+                                }].map((I, idx) => (
+                                    <Link
+                                        to={I.href}
+                                        key={idx}
+                                        className="cursor-pointer text-xs p-2 h-6 w-6 flex justify-center items-center border border-black rounded-full"
+                                    >
+                                        {I.icon}
+                                    </Link>
+                                ))}
+                        </div>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -148,22 +148,23 @@ const Header = ({ connectOpen, setConnectOpen }) => {
             </nav>
 
             {/* Mobile Menu */}
-            {menuOpen && (
-                <div className="fixed top-[70px] right-0 w-2/3 bg-white p-5 shadow-md md:hidden">
-                    {NAV_ITEMS.map((item) => (
-                        <ScrollLink
-                            key={item.to}
-                            className="block p-2 text-sm cursor-pointer border-b"
-                            to={item.to}
-                            smooth={true}
-                            duration={500}
-                            onClick={() => setMenuOpen(false)}
-                        >
-                            {item.label}
-                        </ScrollLink>
-                    ))}
-                </div>
-            )}
+
+            <div onClick={()=>{setMenuOpen(false)}} className={`${menuOpen ? '' : 'hidden' } fixed top-0 w-screen bg-black transition-all duration-75 right-0 h-screen z-50 opacity-15 p-5 shadow-md md:hidden`} />
+            <div className={`${menuOpen ? 'translate-x-0' : 'translate-x-full' } fixed top-0 px-5 transition-all duration-75 right-0 h-screen z-50 bg-white p-5 shadow-md md:hidden`}>
+                {NAV_ITEMS.map((item) => (
+                    <ScrollLink
+                        key={item.to}
+                        className="block p-2 text-sm cursor-pointer border-b"
+                        to={item.to}
+                        smooth={true}
+                        duration={500}
+                        onClick={() => setMenuOpen(false)}
+                    >
+                        {item.label}
+                    </ScrollLink>
+                ))}
+            </div>
+
         </>
     );
 };

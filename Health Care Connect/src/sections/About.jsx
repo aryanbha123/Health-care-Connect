@@ -22,31 +22,28 @@ const AboutSection = () => {
                 <h2 className="text-gray-900 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
                   Empowering Each Other to Succeed
                 </h2>
-                <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+                <p className="text-gray-500 pl-1 text-base font-normal leading-relaxed lg:text-start text-center">
                   Every project we've undertaken has been a collaborative effort, where every person
                   involved has left their mark. Together, we're not just building a company but a
                   community driven by passion, innovation, and impact.
                 </p>
               </div>
-
-              {/* Stats Section */}
-              <div className="w-full lg:justify-start justify-center items-center sm:gap-10 gap-5 inline-flex">
+              <div className="w-full pl-1 lg:justify-start justify-center items-center sm:gap-10 gap-5 inline-flex">
                 <div className="flex-col justify-start items-start inline-flex">
-                  {/* <h3 className="text-gray-900 text-4xl font-bold font-manrope leading-normal">2+</h3>
-                  <h6 className="text-gray-500 text-base font-normal leading-relaxed">Years Since Inception</h6> */}
-                  <p className="font-bold text-gray-500 text-lg leading-relaxed" > A Legacy of Excellence            </p>
+                  <h3 className="text-gray-900 text-4xl font-bold font-manrope leading-normal">8+</h3>
+                  <h6 className="text-gray-500 text-base font-normal leading-relaxed">Years of Experience</h6>
                 </div>
                 <div className="flex-col justify-start items-start inline-flex">
-                  <p className="font-bold text-gray-500 text-lg leading-relaxed"> Innovative & Sustainable Solutions</p>
-                  {/* <h4 className="text-gray-900 text-4xl font-bold font-manrope leading-normal">15+</h4> */}
-                  {/* <h6 className="text-gray-500 text-base font-normal leading-relaxed">Projects Completed</h6> */}
+                  <h4 className="text-gray-900 text-4xl font-bold font-manrope leading-normal">48+</h4>
+                  <h6 className="text-gray-500 text-base font-normal leading-relaxed">Successful Projects</h6>
                 </div>
                 <div className="flex-col justify-start items-start inline-flex">
-                  <p className="font-bold text-gray-500 text-lg leading-relaxed"> Committed to Quality & Integrity</p>
-                  {/* <h4 className="text-gray-900 text-4xl font-bold font-manrope leading-normal">30+</h4> */}
-                  {/* <h6 className="text-gray-500 text-base font-normal leading-relaxed">Clients & Partners</h6> */}
+                  <h4 className="text-gray-900 text-4xl font-bold font-manrope leading-normal">52+</h4>
+                  <h6 className="text-gray-500 text-base font-normal leading-relaxed">Happy Clients</h6>
                 </div>
               </div>
+              {/* Stats Section */}
+
             </div>
 
             {/* Read More Button */}
@@ -58,30 +55,30 @@ const AboutSection = () => {
                 </button>
               </AccordionSummary>
               <AccordionDetails>
-  <p>
-    At the heart of our success lies a deep commitment to excellence, innovation, and collaboration. For years, we have been shaping skylines, creating lasting infrastructures, and fostering meaningful relationships with our clients and partners.
-  </p><br />
+                <p>
+                  At the heart of our success lies a deep commitment to excellence, innovation, and collaboration. For years, we have been shaping skylines, creating lasting infrastructures, and fostering meaningful relationships with our clients and partners.
+                </p><br />
 
-  <p><strong>What Sets Us Apart?</strong></p>
-  <ul>
-    <li className="list-disc pl-2 ml-5"><strong>Expertise & Experience</strong> – With a team of seasoned professionals, we bring industry-leading knowledge and skill to every project.</li>
-    <li className="list-disc pl-2 ml-5"><strong>Innovative Approach</strong> – We embrace the latest technologies and sustainable practices to build for the future.</li>
-    <li className="list-disc pl-2 ml-5"><strong>Client-Centric Vision</strong> – Your vision is our priority. We work closely with you to ensure every project meets your expectations.</li>
-    <li className="list-disc pl-2 ml-5"><strong>Quality & Integrity</strong> – Our commitment to delivering top-tier quality with honesty and transparency remains unwavering.</li>
-  </ul>
-<br />
-  <p><strong>Our Impact</strong></p>
-  <ul>
-    <li className="pl-2 ml-5 list-disc"> <strong>Transforming Landscapes</strong> – From residential to commercial projects, we redefine spaces with precision and creativity.</li>
-    <li className="pl-2 ml-5 list-disc"><strong>Building Relationships</strong> – Trust and collaboration are the foundation of our long-standing partnerships.</li>
-    <li className="pl-2 ml-5 list-disc"><strong>Sustainable Development</strong> – We integrate eco-friendly practices to contribute to a greener tomorrow.</li>
-  </ul>
+                <p><strong>What Sets Us Apart?</strong></p>
+                <ul>
+                  <li className="list-disc pl-2 ml-5"><strong>Expertise & Experience</strong> – With a team of seasoned professionals, we bring industry-leading knowledge and skill to every project.</li>
+                  <li className="list-disc pl-2 ml-5"><strong>Innovative Approach</strong> – We embrace the latest technologies and sustainable practices to build for the future.</li>
+                  <li className="list-disc pl-2 ml-5"><strong>Client-Centric Vision</strong> – Your vision is our priority. We work closely with you to ensure every project meets your expectations.</li>
+                  <li className="list-disc pl-2 ml-5"><strong>Quality & Integrity</strong> – Our commitment to delivering top-tier quality with honesty and transparency remains unwavering.</li>
+                </ul>
+                <br />
+                <p><strong>Our Impact</strong></p>
+                <ul>
+                  <li className="pl-2 ml-5 list-disc"> <strong>Transforming Landscapes</strong> – From residential to commercial projects, we redefine spaces with precision and creativity.</li>
+                  <li className="pl-2 ml-5 list-disc"><strong>Building Relationships</strong> – Trust and collaboration are the foundation of our long-standing partnerships.</li>
+                  <li className="pl-2 ml-5 list-disc"><strong>Sustainable Development</strong> – We integrate eco-friendly practices to contribute to a greener tomorrow.</li>
+                </ul>
 
-  <p>
-    Whether you're looking for a trusted partner for your next big project or seeking insights into our journey, we invite you to explore more about who we are and what we stand for.
-  </p>
+                <p>
+                  Whether you're looking for a trusted partner for your next big project or seeking insights into our journey, we invite you to explore more about who we are and what we stand for.
+                </p>
 
-</AccordionDetails>
+              </AccordionDetails>
 
             </Accordion>
           </div>
