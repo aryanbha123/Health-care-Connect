@@ -35,8 +35,8 @@ const LogoLoader = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 0.8, ease: "easeInOut" } }}
     >
-      <motion.img
-        src="/logo/main.png" // Replace with your logo
+      <motion.video
+        src="/video/Untitled design.mp4" // Replace with your logo
         alt="Loading..."
         className="w-[400px]"
         initial={{ opacity: 0 }}

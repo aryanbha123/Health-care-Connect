@@ -50,9 +50,9 @@ const AboutSection = () => {
 
             <Accordion>
               <AccordionSummary>
-                <button className="sm:w-fit w-full px-3.5 py-2 bg-emerald-400 hover:bg-emerald-300 transition-all duration-700 ease-in-out rounded-lg shadow-md justify-center items-center flex">
+                <a className="sm:w-fit w-full px-3.5 py-2 bg-emerald-400 hover:bg-emerald-300 transition-all duration-700 ease-in-out rounded-lg shadow-md justify-center items-center flex">
                   <span className="px-1.5 text-white text-sm font-medium leading-6">Read More</span>
-                </button>
+                </a>
               </AccordionSummary>
               <AccordionDetails>
                 <p>

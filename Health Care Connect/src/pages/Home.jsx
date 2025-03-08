@@ -8,12 +8,12 @@ import Connect from '../sections/Connect';
 import Content from '../sections/Content';
 import Services from '../sections/Services';
 
-const Home = ({connectOpen, setConnectOpen}) => {
+const Home = ({ connectOpen, setConnectOpen }) => {
     const [isShow, setShow] = useState(true);
     useEffect(() => {
         setTimeout(() => {
             setShow(false)
-        },0)
+        }, 2500)
     }, []);
 
     return (
@@ -21,13 +21,14 @@ const Home = ({connectOpen, setConnectOpen}) => {
 
             {isShow &&
 
-                <div className="h-screen w-screen z-50 fixed left-0 top-0 flex justify-center items-center backdrop-blur-sm">
+                <div className="h-screen bg-white w-screen z-50 fixed left-0 top-0 flex justify-center items-center">
+                    
                     <video
-                    autoPlay
-                    playsInline loop
-                        className=" object-contain rounded-full  shadow-blue-500/50 "
-                        src="/assets/WhatsApp Video 2025-02-25 at 19.03.55.mp4"
-                        alt="Loading Animation"
+                        className="h-36"
+                        src="/video/Untitled%20design.mp4"
+                        autoPlay
+                        loop
+                        muted
                     />
                 </div>
             }
@@ -35,10 +36,10 @@ const Home = ({connectOpen, setConnectOpen}) => {
             <Info />
             <AboutSection />
             <HealthCareSection connectOpen={connectOpen} setConnectOpen={setConnectOpen} />
-            <Content/>
-            <Services/>
+            <Content />
+            <Services />
             <Features />
-            <Connect connectOpen={connectOpen} setConnectOpen={setConnectOpen}/>
+            <Connect connectOpen={connectOpen} setConnectOpen={setConnectOpen} />
         </div>
     );
 }

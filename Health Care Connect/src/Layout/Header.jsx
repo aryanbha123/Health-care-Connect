@@ -150,20 +150,23 @@ const Header = ({ connectOpen, setConnectOpen }) => {
             {/* Mobile Menu */}
 
             <div onClick={()=>{setMenuOpen(false)}} className={`${menuOpen ? '' : 'hidden' } fixed top-0 w-screen bg-black transition-all duration-75 right-0 h-screen z-50 opacity-15 p-5 shadow-md md:hidden`} />
-            <div className={`${menuOpen ? 'translate-x-0' : 'translate-x-full' } fixed top-0 px-5 transition-all duration-75 right-0 h-screen z-50 bg-white p-5 shadow-md md:hidden`}>
-                {NAV_ITEMS.map((item) => (
-                    <ScrollLink
-                        key={item.to}
-                        className="block p-2 text-sm cursor-pointer border-b"
-                        to={item.to}
-                        smooth={true}
-                        duration={500}
-                        onClick={() => setMenuOpen(false)}
-                    >
-                        {item.label}
-                    </ScrollLink>
-                ))}
-            </div>
+            <div className={`${menuOpen ? 'translate-x-0' : 'translate-x-full'} fixed top-0 right-0 h-screen w-64 z-50 bg-white shadow-lg md:hidden transition-transform duration-200 ease-in-out rounded-l-xl p-6`}>
+    <ul className="space-y-4">
+        {NAV_ITEMS.map((item) => (
+            <ScrollLink
+                key={item.to}
+                className="block p-3 text-base font-medium text-gray-800 border-b border-gray-200 hover:bg-gray-100 hover:rounded-lg transition-all"
+                to={item.to}
+                smooth={true}
+                duration={500}
+                onClick={() => setMenuOpen(false)}
+            >
+                {item.label}
+            </ScrollLink>
+        ))}
+    </ul>
+</div>
+
 
         </>
     );
