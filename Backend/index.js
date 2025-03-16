@@ -3,11 +3,11 @@ import { configDotenv } from 'dotenv';
 import mongoose from 'mongoose';
 import { createTransport } from 'nodemailer'
 import cors from 'cors'
+const app = express();
 app.use(cors({
     origin:"*"
 }))
 configDotenv();
-const app = express();
 const PORT = process.env.PORT || 3000;
 const URI = process.env.URI;
 const adminemail = process.env.email || 'healthcareconnect2025@gmail.com';
