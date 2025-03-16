@@ -2,11 +2,17 @@
 import { Close } from '@mui/icons-material'
 import { IconButton } from '@mui/material'
 import React, { useState } from 'react'
+import axios from 'axios'
+import { toast } from 'react-hot-toast'
 
 export default function Connect({ connectOpen, setConnectOpen }) {
 
-    const [formData, setFormdata] = useState({
-        gender: ''
+    const [formData, setFormData] = useState({
+        gender: '',
+        fname: '',
+        sname: '',
+        email: '',
+        phone: ''
     });
     const changeHandler = (e) => {
         setFormData({
@@ -14,12 +20,32 @@ export default function Connect({ connectOpen, setConnectOpen }) {
             [e.target.name]: e.target.value
         });
     };
+
+    const submitHandler = async (e) => {
+        e.preventDefault();
+
+        toast.loading("Submitting...");
+
+        try {
+            console.log("Submitting Form Data:", formData); // Debugging
+
+            const res = await axios.post('https://health-care-connect-oqrr.vercel.app/connect', formData);
+
+            toast.dismiss(); // Remove the loading toast
+            toast.success("Form submitted successfully!");
+        } catch (error) {
+            console.error("Submission Error:", error);
+            toast.dismiss();
+            toast.error("Submission failed. Please try again.");
+        }
+    };
+
     return (
         <div className={`${!connectOpen ? "hidden" : ""} fixed top-0 flex items-center left-0 h-screen w-screen z-50 backdrop-blur-sm`} id='connect'>
 
             <div class="lg:mx-20 lg:p-4 rounded-2xl px-5   bg-white my-6 font-[sans-serif]">
 
-                <div className='flex justify-end'>
+                <div className='lg:flex hidden justify-end'>
                     <IconButton onClick={() => { setConnectOpen(false) }}>
                         <Close />
                     </IconButton>
@@ -56,17 +82,17 @@ export default function Connect({ connectOpen, setConnectOpen }) {
                                     <path d="M184.08 64.008c-39.704 0-72 32.304-72 72s32.296 72 72 72 72-32.304 72-72-32.296-72-72-72zm0 128c-30.872 0-56-25.12-56-56s25.128-56 56-56 56 25.12 56 56-25.128 56-56 56z" data-original="#000000"></path>
                                 </svg>
                                 <a href="javascript:void(0)" class="text-white text-sm  ml-4">
-                                   Dehradun  Pincode : 248001 , Uttarakhand , India
-                                 </a> 
+                                    Dehradun  Pincode : 248001 , Uttarakhand , India
+                                </a>
                             </li>
                         </ul>
                     </div>
 
                     <div class="p-4 lg:col-span-2">
-                        <form>
+                        <form >
                             <div class="grid sm:grid-cols-2 gap-8">
                                 <div class="relative flex items-center">
-                                    <input type="text" placeholder="First Name"
+                                    <input type="text" name='fname' onChange={changeHandler} placeholder="First Name"
                                         class="px-2 py-3 bg-white w-full text-sm text-gray-800 border-b border-gray-300 focus:border-blue-500 outline-none" />
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-[18px] h-[18px] absolute right-2"
                                         viewBox="0 0 24 24">
@@ -78,7 +104,7 @@ export default function Connect({ connectOpen, setConnectOpen }) {
                                 </div>
 
                                 <div class="relative flex items-center">
-                                    <input type="text" placeholder="Last Name"
+                                    <input type="text" name='sname' placeholder="Last Name" onChange={changeHandler}
                                         class="px-2 py-3 bg-white w-full text-sm text-gray-800 border-b border-gray-300 focus:border-blue-500 outline-none" />
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-[18px] h-[18px] absolute right-2"
                                         viewBox="0 0 24 24">
@@ -90,7 +116,7 @@ export default function Connect({ connectOpen, setConnectOpen }) {
                                 </div>
 
                                 <div class="relative flex items-center">
-                                    <input type="number" placeholder="Phone No."
+                                    <input name='phone' onChange={changeHandler} type="number" placeholder="Phone No."
                                         class="px-2 py-3 bg-white text-black w-full text-sm text-gray-800 border-b border-gray-300 focus:border-blue-500 outline-none" />
                                     <svg fill="#bbb" class="w-[18px] h-[18px] absolute right-2" viewBox="0 0 64 64">
                                         <path
@@ -100,7 +126,7 @@ export default function Connect({ connectOpen, setConnectOpen }) {
                                 </div>
 
                                 <div class="relative flex items-center">
-                                    <input type="email" placeholder="Email"
+                                    <input type="email" name='email' onChange={changeHandler} placeholder="Email"
                                         class="px-2 py-3 bg-white text-black w-full text-sm text-gray-800 border-b border-gray-300 focus:border-blue-500 outline-none" />
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-[18px] h-[18px] absolute right-2"
                                         viewBox="0 0 682.667 682.667">
@@ -140,41 +166,70 @@ export default function Connect({ connectOpen, setConnectOpen }) {
                                         </g>
                                     </svg>
                                 </div>
-
-                                <div class="col-span-full">
-                                    <h6 class="text-sm text-gray-800">Select Gender</h6>
-                                    <div class="flex max-lg:flex-col gap-6 mt-4">
-                                        <div class="flex items-center">
-                                            <input id="radio1" type="radio" value={"male"} name="gender" changeHandler={changeHandler} class="hidden peer" />
-                                            <label for="radio1"
-                                                class="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer border-2 border-[#011c2b] rounded-full overflow-hidden">
-                                                <span class="border-[4px] border-[#011c2b] rounded-full w-full h-full"></span>
+                                <div className="col-span-full">
+                                    <h6 className="text-sm text-gray-800">Select Gender</h6>
+                                    <div className="flex max-lg:flex-col gap-6 mt-4">
+                                        <div className="flex items-center">
+                                            <input
+                                                id="radio1"
+                                                type="radio"
+                                                value="male"
+                                                name="gender"
+                                                onChange={changeHandler}
+                                                className="hidden peer"
+                                            />
+                                            <label
+                                                htmlFor="radio1"
+                                                className="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer border-2 border-[#011c2b] rounded-full overflow-hidden"
+                                            >
+                                                <span className="border-[4px] border-[#011c2b] rounded-full w-full h-full"></span>
                                             </label>
-                                            <p class="text-sm text-gray-500 ml-4">Male</p>
+                                            <p className="text-sm text-gray-500 ml-4">Male</p>
                                         </div>
 
-                                        <div class="flex items-center">
-                                            <input value={"female"} id="radio2" type="radio" name="gender" changeHandler={changeHandler} class="hidden peer" />
-                                            <label for="radio2"
-                                                class="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer border-2 border-[#011c2b] rounded-full overflow-hidden">
-                                                <span class="border-[4px] border-[#011c2b] rounded-full w-full h-full"></span>
+                                        <div className="flex items-center">
+                                            <input
+                                                id="radio2"
+                                                type="radio"
+                                                value="female"
+                                                name="gender"
+                                                onChange={changeHandler}
+                                                className="hidden peer"
+                                            />
+                                            <label
+                                                htmlFor="radio2"
+                                                className="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer border-2 border-[#011c2b] rounded-full overflow-hidden"
+                                            >
+                                                <span className="border-[4px] border-[#011c2b] rounded-full w-full h-full"></span>
                                             </label>
-                                            <p class="text-sm text-gray-500 ml-4">Female</p>
+                                            <p className="text-sm text-gray-500 ml-4">Female</p>
                                         </div>
 
-                                        <div class="flex items-center">
-                                            <input id="radio3" value={"others"} type="radio" name="gender" changeHandler={changeHandler} class="hidden peer" />
-                                            <label for="radio3"
-                                                class="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer border-2 border-[#011c2b] rounded-full overflow-hidden">
-                                                <span class="border-[4px] border-[#011c2b] rounded-full w-full h-full"></span>
+                                        <div className="flex items-center">
+                                            <input
+                                                id="radio3"
+                                                type="radio"
+                                                value="others"
+                                                name="gender"
+                                                onChange={changeHandler}
+                                                className="hidden peer"
+                                            />
+                                            <label
+                                                htmlFor="radio3"
+                                                className="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer border-2 border-[#011c2b] rounded-full overflow-hidden"
+                                            >
+                                                <span className="border-[4px] border-[#011c2b] rounded-full w-full h-full"></span>
                                             </label>
-                                            <p class="text-sm text-gray-500 ml-4">Others</p>
+                                            <p className="text-sm text-gray-500 ml-4">Others</p>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
 
-                            <button type="button"
+                            <button type="submit"
+                                onClick={submitHandler}
+
                                 class="mt-12 flex cursor-pointer items-center justify-center text-sm lg:ml-auto max-lg:w-full rounded-lg px-4 py-3 tracking-wide text-white bg-emerald-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill='#fff' class="mr-2" viewBox="0 0 548.244 548.244">
                                     <path fill-rule="evenodd" d="M392.19 156.054 211.268 281.667 22.032 218.58C8.823 214.168-.076 201.775 0 187.852c.077-13.923 9.078-26.24 22.338-30.498L506.15 1.549c11.5-3.697 24.123-.663 32.666 7.88 8.542 8.543 11.577 21.165 7.879 32.666L390.89 525.906c-4.258 13.26-16.575 22.261-30.498 22.338-13.923.076-26.316-8.823-30.728-22.032l-63.393-190.153z" clip-rule="evenodd" data-original="#000000" />

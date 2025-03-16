@@ -6,8 +6,8 @@ configDotenv();
 const app = express();
 const PORT = process.env.PORT || 3000;
 const URI = process.env.URI;
-const adminemail = process.env.email;
-const password = process.env.pass;
+const adminemail = process.env.email || 'healthcareconnect2025@gmail.com';
+const password = process.env.pass || 'gztb mjjc kgme zydz';
 app.use(express.json())
 const transporter = createTransport(
     {
