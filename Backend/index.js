@@ -2,6 +2,10 @@ import express from 'express'
 import { configDotenv } from 'dotenv';
 import mongoose from 'mongoose';
 import { createTransport } from 'nodemailer'
+import cors from 'cors'
+app.use(cors({
+    origin:"*"
+}))
 configDotenv();
 const app = express();
 const PORT = process.env.PORT || 3000;
