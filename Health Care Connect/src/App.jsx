@@ -2,6 +2,7 @@ import React, { lazy, Suspense, useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './Layout/Layout';
 import { motion, AnimatePresence } from "framer-motion";
+import { Toaster } from 'react-hot-toast';
 
 const Home = lazy(() => import('./pages/Home'));
 
@@ -21,6 +22,7 @@ const App = () => {
             <Route path='/' element={<Layout connectOpen={connectOpen} setConnectOpen={setConnectOpen} wrappedComponent={<Home connectOpen={connectOpen} setConnectOpen={setConnectOpen}  />} />} />
           </Routes>
       </BrowserRouter>
+      <Toaster position="top-center" />
     </Suspense>
   );
 }
