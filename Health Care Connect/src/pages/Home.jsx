@@ -24,7 +24,7 @@ const Home = ({ connectOpen, setConnectOpen }) => {
                 <div className="h-screen bg-white w-screen z-50 fixed left-0 top-0 flex justify-center items-center">
                     
                     <video
-                        className="h-36"
+                        className="h-64"
                         src="/video/Untitled%20design.mp4"
                         autoPlay
                         loop
