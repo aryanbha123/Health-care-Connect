@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useState, useEffect } from 'react';
+jimport React, { lazy, Suspense, useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './Layout/Layout';
 import { motion, AnimatePresence } from "framer-motion";
@@ -27,7 +27,7 @@ const App = () => {
   );
 }
 
-export default App;
+export default Ap;
 
 const LogoLoader = () => {
   return (
