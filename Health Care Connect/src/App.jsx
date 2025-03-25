@@ -1,4 +1,4 @@
-jimport React, { lazy, Suspense, useState, useEffect } from 'react';
+import React, { lazy, Suspense, useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './Layout/Layout';
 import { motion, AnimatePresence } from "framer-motion";
@@ -19,7 +19,8 @@ const App = () => {
     <Suspense fallback={<Loaader />}>
       <BrowserRouter>
           <Routes>
-            <Route path='/' element={<Layout connectOpen={connectOpen} setConnectOpen={setConnectOpen} wrappedComponent={<Home connectOpen={connectOpen} setConnectOpen={setConnectOpen}  />} />} />
+            <Route path="*" element={<>Home</>} ></Route>
+            <Route path='/a' element={<Layout connectOpen={connectOpen} setConnectOpen={setConnectOpen} wrappedComponent={<Home connectOpen={connectOpen} setConnectOpen={setConnectOpen}  />} />} />
           </Routes>
       </BrowserRouter>
       <Toaster position="top-center" />
@@ -27,7 +28,7 @@ const App = () => {
   );
 }
 
-export default Ap;
+export default App;
 
 const LogoLoader = () => {
   return (
