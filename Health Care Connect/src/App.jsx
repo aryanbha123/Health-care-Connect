@@ -19,8 +19,8 @@ const App = () => {
     <Suspense fallback={<Loaader />}>
       <BrowserRouter>
           <Routes>
-            <Route path="*" element={<div  className="flex justify-center items-center bg-gray-50 ">Happy 😂</div>} ></Route>
-            <Route path='/a' element={<Layout connectOpen={connectOpen} setConnectOpen={setConnectOpen} wrappedComponent={<Home connectOpen={connectOpen} setConnectOpen={setConnectOpen}  />} />} />
+{/*             <Route path="*" element={<div  className="flex justify-center items-center bg-gray-50 ">Happy 😂</div>} ></Route> */}
+            <Route path='/' element={<Layout connectOpen={connectOpen} setConnectOpen={setConnectOpen} wrappedComponent={<Home connectOpen={connectOpen} setConnectOpen={setConnectOpen}  />} />} />
           </Routes>
       </BrowserRouter>
       <Toaster position="top-center" />
